@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sudoku Solver</title>
+  </head>
+  <body>
+    <h1>Sudoku Solver</h1>
+    <p>Enter cell values</p>
+    <table id="board">
+  		<!-- <tr>
+  			<td><input id="cell_0" type="text" size="1"></td>
+  			<td><input id="cell_1" type="text" size="1"></td>
+  			<td><input id="cell_2" type="text" size="1"></td>
+  			<td><input id="cell_3" type="text" size="1" value="2"></td>
+  			<td><input id="cell_4" type="text" size="1" value="6"></td>
+  			<td><input id="cell_5" type="text" size="1"></td>
+  			<td><input id="cell_6" type="text" size="1" value="7"></td>
+  			<td><input id="cell_7" type="text" size="1"></td>
+  			<td><input id="cell_8" type="text" size="1" value="1"></td>
+  		</tr>
+
+  		<tr>
+  			<td><input id="cell_9" type="text" size="1" value="6"></td>
+  			<td><input id="cell_10" type="text" size="1" value="8"></td>
+  			<td><input id="cell_11" type="text" size="1"></td>
+  			<td><input id="cell_12" type="text" size="1"></td>
+  			<td><input id="cell_13" type="text" size="1" value="7"></td>
+  			<td><input id="cell_14" type="text" size="1"></td>
+  			<td><input id="cell_15" type="text" size="1"></td>
+  			<td><input id="cell_16" type="text" size="1" value="9"></td>
+  			<td><input id="cell_17" type="text" size="1"></td>
+  		</tr>
+
+  		<tr>
+  			<td><input id="cell_18" type="text" size="1" value="1"></td>
+  			<td><input id="cell_19" type="text" size="1" value="9"></td>
+  			<td><input id="cell_20" type="text" size="1"></td>
+  			<td><input id="cell_21" type="text" size="1"></td>
+  			<td><input id="cell_22" type="text" size="1"></td>
+  			<td><input id="cell_23" type="text" size="1" value="4"></td>
+  			<td><input id="cell_24" type="text" size="1" value="5"></td>
+  			<td><input id="cell_25" type="text" size="1"></td>
+  			<td><input id="cell_26" type="text" size="1"></td>
+  		</tr>
+
+  		<tr>
+  			<td><input id="cell_27" type="text" size="1" value="8"></td>
+  			<td><input id="cell_28" type="text" size="1" value="2"></td>
+  			<td><input id="cell_29" type="text" size="1"></td>
+  			<td><input id="cell_30" type="text" size="1" value="1"></td>
+  			<td><input id="cell_31" type="text" size="1"></td>
+  			<td><input id="cell_32" type="text" size="1"></td>
+  			<td><input id="cell_33" type="text" size="1"></td>
+  			<td><input id="cell_34" type="text" size="1" value="4"></td>
+  			<td><input id="cell_35" type="text" size="1"></td>
+  		</tr>
+
+  		<tr>          
+          <td><input id="cell_36" type="text" size="1"></td>
+          <td><input id="cell_37" type="text" size="1"></td>
+          <td><input id="cell_38" type="text" size="1" value="4"></td>
+          <td><input id="cell_39" type="text" size="1" value="6"></td>
+          <td><input id="cell_40" type="text" size="1"></td>
+          <td><input id="cell_41" type="text" size="1" value="2"></td>
+          
+          <td><input id="cell_42" type="text" size="1" value="9"></td>
+          <td><input id="cell_43" type="text" size="1"></td>
+          <td><input id="cell_44" type="text" size="1"></td>
+        </tr>
+
+        <tr>          
+          <td><input id="cell_45" type="text" size="1"></td>
+          <td><input id="cell_46" type="text" size="1" value="5"></td>
+          <td><input id="cell_47" type="text" size="1"></td>
+          
+          <td><input id="cell_48" type="text" size="1"></td>
+          <td><input id="cell_49" type="text" size="1"></td>
+          <td><input id="cell_50" type="text" size="1" value="3"></td>
+          
+          <td><input id="cell_51" type="text" size="1"></td>
+          <td><input id="cell_52" type="text" size="1" value="2"></td>
+          <td><input id="cell_53" type="text" size="1" value="8"></td>
+        </tr>
+
+        <tr>          
+          <td><input id="cell_54" type="text" size="1"></td>
+          <td><input id="cell_55" type="text" size="1"></td>
+          <td><input id="cell_56" type="text" size="1" value="9"></td>
+          <td><input id="cell_57" type="text" size="1" value="3"></td>
+          <td><input id="cell_58" type="text" size="1"></td>
+          <td><input id="cell_59" type="text" size="1"></td>
+          <td><input id="cell_60" type="text" size="1"></td>
+          <td><input id="cell_61" type="text" size="1" value="7"></td>
+          <td><input id="cell_62" type="text" size="1" value="4"></td>
+        </tr>
+
+        <tr>          
+          <td><input id="cell_63" type="text" size="1"></td>
+          <td><input id="cell_64" type="text" size="1" value="4"></td>
+          <td><input id="cell_65" type="text" size="1"></td>       
+          <td><input id="cell_66" type="text" size="1"></td>
+          <td><input id="cell_67" type="text" size="1" value="5"></td>
+          <td><input id="cell_68" type="text" size="1"></td>
+          <td><input id="cell_69" type="text" size="1"></td>
+          <td><input id="cell_70" type="text" size="1" value="3"></td>
+          <td><input id="cell_71" type="text" size="1" value="6"></td>
+        </tr>
+
+        <tr>          
+          <td><input id="cell_72" type="text" size="1" value="7"></td>
+          <td><input id="cell_73" type="text" size="1"></td>
+          <td><input id="cell_74" type="text" size="1" value="3"></td>
+          <td><input id="cell_75" type="text" size="1"></td>
+          <td><input id="cell_76" type="text" size="1" value="1"></td>
+          <td><input id="cell_77" type="text" size="1" value="8"></td>
+          <td><input id="cell_78" type="text" size="1"></td>
+          <td><input id="cell_79" type="text" size="1"></td>
+          <td><input id="cell_80" type="text" size="1"></td>
+        </tr> -->
+      <tr>
+        <td><input id="cell_0" type="text" size="1"></td>
+        <td><input id="cell_1" type="text" size="1" value="2"></td>
+        <td><input id="cell_2" type="text" size="1"></td>
+        <td><input id="cell_3" type="text" size="1"></td>
+        <td><input id="cell_4" type="text" size="1"></td>
+        <td><input id="cell_5" type="text" size="1"></td>
+        <td><input id="cell_6" type="text" size="1"></td>
+        <td><input id="cell_7" type="text" size="1"></td>
+        <td><input id="cell_8" type="text" size="1"></td>
+      </tr>
+
+      <tr>
+        <td><input id="cell_9" type="text" size="1"></td>
+        <td><input id="cell_10" type="text" size="1"></td>
+        <td><input id="cell_11" type="text" size="1"></td>
+        <td><input id="cell_12" type="text" size="1" value="6"></td>
+        <td><input id="cell_13" type="text" size="1"></td>
+        <td><input id="cell_14" type="text" size="1"></td>
+        <td><input id="cell_15" type="text" size="1"></td>
+        <td><input id="cell_16" type="text" size="1"></td>
+        <td><input id="cell_17" type="text" size="1" value="3"></td>
+      </tr>
+
+      <tr>
+        <td><input id="cell_18" type="text" size="1"></td>
+        <td><input id="cell_19" type="text" size="1" value="7"></td>
+        <td><input id="cell_20" type="text" size="1" value="4"></td>
+        <td><input id="cell_21" type="text" size="1"></td>
+        <td><input id="cell_22" type="text" size="1" value="8"></td>
+        <td><input id="cell_23" type="text" size="1"></td>
+        <td><input id="cell_24" type="text" size="1"></td>
+        <td><input id="cell_25" type="text" size="1"></td>
+        <td><input id="cell_26" type="text" size="1"></td>
+      </tr>
+
+      <tr>
+        <td><input id="cell_27" type="text" size="1"></td>
+        <td><input id="cell_28" type="text" size="1"></td>
+        <td><input id="cell_29" type="text" size="1"></td>
+        <td><input id="cell_30" type="text" size="1"></td>
+        <td><input id="cell_31" type="text" size="1"></td>
+        <td><input id="cell_32" type="text" size="1" value="3"></td>
+        <td><input id="cell_33" type="text" size="1"></td>
+        <td><input id="cell_34" type="text" size="1"></td>
+        <td><input id="cell_35" type="text" size="1" value="2"></td>
+      </tr>
+
+      <tr>          
+          <td><input id="cell_36" type="text" size="1"></td>
+          <td><input id="cell_37" type="text" size="1" value="8"></td>
+          <td><input id="cell_38" type="text" size="1"></td>
+          <td><input id="cell_39" type="text" size="1"></td>
+          <td><input id="cell_40" type="text" size="1" value="4"></td>
+          <td><input id="cell_41" type="text" size="1"></td>        
+          <td><input id="cell_42" type="text" size="1"></td>
+          <td><input id="cell_43" type="text" size="1" value="1"></td>
+          <td><input id="cell_44" type="text" size="1"></td>
+        </tr>
+
+        <tr>          
+          <td><input id="cell_45" type="text" size="1" value="6"></td>
+          <td><input id="cell_46" type="text" size="1"></td>
+          <td><input id="cell_47" type="text" size="1"></td>        
+          <td><input id="cell_48" type="text" size="1" value="5"></td>
+          <td><input id="cell_49" type="text" size="1"></td>
+          <td><input id="cell_50" type="text" size="1"></td>         
+          <td><input id="cell_51" type="text" size="1"></td>
+          <td><input id="cell_52" type="text" size="1"></td>
+          <td><input id="cell_53" type="text" size="1"></td>
+        </tr>
+
+        <tr>          
+          <td><input id="cell_54" type="text" size="1"></td>
+          <td><input id="cell_55" type="text" size="1"></td>
+          <td><input id="cell_56" type="text" size="1"></td>
+          <td><input id="cell_57" type="text" size="1"></td>
+          <td><input id="cell_58" type="text" size="1" value="1"></td>
+          <td><input id="cell_59" type="text" size="1"></td>
+          <td><input id="cell_60" type="text" size="1" value="7"></td>
+          <td><input id="cell_61" type="text" size="1" value="8"></td>
+          <td><input id="cell_62" type="text" size="1"></td>
+        </tr>
+
+        <tr>          
+          <td><input id="cell_63" type="text" size="1" value="5"></td>
+          <td><input id="cell_64" type="text" size="1"></td>
+          <td><input id="cell_65" type="text" size="1"></td>       
+          <td><input id="cell_66" type="text" size="1"></td>
+          <td><input id="cell_67" type="text" size="1"></td>
+          <td><input id="cell_68" type="text" size="1" value="9"></td>
+          <td><input id="cell_69" type="text" size="1"></td>
+          <td><input id="cell_70" type="text" size="1"></td>
+          <td><input id="cell_71" type="text" size="1"></td>
+        </tr>
+
+        <tr>          
+          <td><input id="cell_72" type="text" size="1"></td>
+          <td><input id="cell_73" type="text" size="1"></td>
+          <td><input id="cell_74" type="text" size="1"></td>
+          <td><input id="cell_75" type="text" size="1"></td>
+          <td><input id="cell_76" type="text" size="1"></td>
+          <td><input id="cell_77" type="text" size="1"></td>
+          <td><input id="cell_78" type="text" size="1"></td>
+          <td><input id="cell_79" type="text" size="1" value="4"></td>
+          <td><input id="cell_80" type="text" size="1"></td>
+        </tr>
+    </table>
+    <button id="solveButton">Solve</button>
+  </body>
+  <script type="text/javascript" src="popup.js"></script>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <body style="width: 300px">
+    Open <a href="http://stackoverflow.com" target="_blank">this page</a> and then 
+    <button id="clickme">click me</button>
+    <script type="text/javascript" src="popup.js"></script>
+  </body>
+</html> -->

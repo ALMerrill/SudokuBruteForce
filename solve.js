@@ -1,0 +1,1 @@
+getElementByID('cell_0').value = '1';
