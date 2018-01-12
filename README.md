@@ -14,7 +14,7 @@ Easy
 0 0 9 3 0 0 0 7 4  
 0 4 0 0 5 0 0 3 6  
 7 0 3 0 1 8 0 0 0  
-Time: 0.0278 seconds
+Time: 109 milliseconds
 
 
 Hard  

@@ -59,6 +59,9 @@ function solve() {
     var curCell = 0
     var direction = 1
 
+    var before = Date.now();
+
+
     while(curCell > -1 && curCell < 81) {
     	x = xcoord[curCell];
     	y = ycoord[curCell];
@@ -66,6 +69,7 @@ function solve() {
     	if(origBoard[x][y] == 0 && board[x][y] < 9) {
     		direction = 1
     		board[x][y]++;
+            document.getElementById('cell_' + curCell).value = board[x][y];
     		if(!doubles(board, board[x][y], x, y))
     			curCell++;
     	}
@@ -82,11 +86,14 @@ function solve() {
     	}
     }
 
-    for(i = 0; i < 81; i++) {
-    	x = xcoord[i];
-    	y = ycoord[i];
-    	document.getElementById('cell_' + i).value = board[x][y];
-    }
+    // for(i = 0; i < 81; i++) {
+    // 	x = xcoord[i];
+    // 	y = ycoord[i];
+    // 	document.getElementById('cell_' + i).value = board[x][y];
+    // }
+
+    var after = Date.now();
+    console.log("Time: " + (after - before) + " milliseconds");
 }
 
 function doubles(board, val, x, y) {
